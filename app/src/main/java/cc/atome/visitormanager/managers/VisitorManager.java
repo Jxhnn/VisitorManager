@@ -19,19 +19,19 @@ public class VisitorManager {
     }
 
     
-    public String addVisiteur(Visitor visitor) {
+    public String addVisitor(Visitor visitor) {
         String result = "";
         String myUrl="http://www.atome.cc/api/functions/addVisiteur.php";
 
-		String params = "id=" + visitor.getId()
-                +"&nom=" + visitor.getName()
-                + "&prenom=" + visitor.getLastName()
-                + "&login=" + visitor.getLogin()
-                + "&mdp=" + visitor.getPassword()
-                + "&adresse=" + visitor.getAddress()
-                + "&cp=" + visitor.getZipCode()
-                + "&ville=" + visitor.getTown()
-                + "&dateEmbauche=" + visitor.getTakenDate();
+		String params = "idVisitor=" + visitor.getId()
+                +"&nameVisitor=" + visitor.getName()
+                + "&lastnameVisitor=" + visitor.getLastName()
+                + "&loginVisitor=" + visitor.getLogin()
+                + "&passVisitor=" + visitor.getPassword()
+                + "&addressVisitor=" + visitor.getAddress()
+                + "&zipVisitor=" + visitor.getZipCode()
+                + "&townVisitor=" + visitor.getTown()
+                + "&takenDate=" + visitor.getTakenDate();
 
 		Log.d("requete",params);
 
@@ -44,7 +44,7 @@ public class VisitorManager {
         } catch (ExecutionException e) {
             e.printStackTrace();
         }
-        Log.d("resultat",result);
+        Log.d("resultat", "result: " + result);
         return result;
     }
 
