@@ -54,7 +54,6 @@ public class HttpPostRequest extends AsyncTask<String, Void, String>{
             StringBuffer response = new StringBuffer();
             while((line = rd.readLine()) != null) {
                 response.append(line);
-                response.append('\r');
             }
             rd.close();
             Log.d("reponse",response.toString());

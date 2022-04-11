@@ -9,7 +9,7 @@ import android.widget.Button;
 
 public class PropositionActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private Button addVisitor;
+    private Button addVisitor, showVisitor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +18,9 @@ public class PropositionActivity extends AppCompatActivity implements View.OnCli
 
         addVisitor = findViewById(R.id.addVisitor);
         addVisitor.setOnClickListener(this);
+
+        showVisitor = findViewById(R.id.showVisitor);
+        showVisitor.setOnClickListener(this);
     }
 
     @Override
@@ -25,6 +28,10 @@ public class PropositionActivity extends AppCompatActivity implements View.OnCli
 
         if (view == addVisitor) {
             Intent i = new Intent(PropositionActivity.this, AjoutActivity.class);
+            startActivity(i);
+
+        } else if (view == showVisitor) {
+            Intent i = new Intent(PropositionActivity.this, ConsultActivity.class);
             startActivity(i);
         }
     }

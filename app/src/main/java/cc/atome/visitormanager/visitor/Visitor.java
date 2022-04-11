@@ -90,4 +90,9 @@ public class Visitor {
     public void setTakenDate(String takenDate) {
         this.takenDate = takenDate;
     }
+
+    @Override
+    public String toString() {
+        return getId() + "          " + getName() + "           " + getLastName();
+    }
 }
