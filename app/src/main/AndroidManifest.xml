@@ -19,6 +19,9 @@
             android:name=".AjoutActivity"
             android:exported="false" />
         <activity
+            android:name=".ModifActivity"
+            android:exported="false" />
+        <activity
             android:name=".PropositionActivity"
             android:exported="false" />
         <activity

@@ -18,7 +18,7 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/textViewId"
+                android:id="@+id/textViewChoice"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -228,7 +228,7 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/buttonValiderAjout"
+                android:id="@+id/modifyButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Valider"

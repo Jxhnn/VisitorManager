@@ -92,4 +92,77 @@ public class VisitorManager {
         return result;
     }
 
+    public String modifyVisitor(Visitor visitor, String oldId) {
+        String result = "";
+
+        String myUrl="https://www.atome.cc/api/functions/modifVisiteurById.php";
+
+        String params = "idVisitor=" + visitor.getId()
+                + "&nameVisitor=" + visitor.getName()
+                + "&lastnameVisitor=" + visitor.getLastName()
+                + "&loginVisitor=" + visitor.getLogin()
+                + "&passVisitor=" + visitor.getPassword()
+                + "&addressVisitor=" + visitor.getAddress()
+                + "&zipVisitor=" + visitor.getZipCode()
+                + "&townVisitor=" + visitor.getTown()
+                + "&takenDate=" + visitor.getTakenDate()
+                + "&oldIdVisitor=" + oldId;
+
+        Log.d("requete",params);
+
+        HttpPostRequest postRequest = new HttpPostRequest();
+        try{
+            result = postRequest.execute(new String []{myUrl, params}).get();
+        }
+        catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        Log.d("resultat", "result: " + result);
+        return result;
+    }
+
+    public boolean deleteVisitor(String id) {
+        String result = "";
+        String myUrl="https://www.atome.cc/api/functions/supVisiteurById.php";
+        String params = "idVisitor=" + id;
+
+        HttpPostRequest postRequest = new HttpPostRequest();
+        try {
+            result = postRequest.execute(new String []{myUrl, params}).get();
+        }
+        catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        return result.equals("done");
+    }
+
+    public boolean loginVisitor(String login, String pass) {
+        String result = "";
+        String myUrl="https://www.atome.cc/api/functions/loginVisitor.php";
+        String params = "loginVisitor=" + login
+                + "&passVisitor=" + pass;
+
+        HttpPostRequest postRequest = new HttpPostRequest();
+        try {
+            result = postRequest.execute(new String []{myUrl, params}).get();
+
+            JSONObject object = new JSONObject(result);
+        }
+        catch (InterruptedException e) {
+            e.printStackTrace();
+            return false;
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+            return false;
+        } catch (JSONException e) {
+            e.printStackTrace();
+            return false;
+        }
+        return true;
+    }
+
 }

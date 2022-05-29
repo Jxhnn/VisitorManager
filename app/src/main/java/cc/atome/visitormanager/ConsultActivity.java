@@ -12,6 +12,7 @@ import android.widget.ListView;
 import java.util.ArrayList;
 
 import cc.atome.visitormanager.managers.VisitorManager;
+import cc.atome.visitormanager.utils.IntentStorage;
 import cc.atome.visitormanager.visitor.Visitor;
 
 public class ConsultActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
@@ -42,6 +43,7 @@ public class ConsultActivity extends AppCompatActivity implements AdapterView.On
         ArrayList<Visitor> allVisitors = visitorManager.getAllVisitors();
 
         Intent intent = new Intent(ConsultActivity.this, ModifActivity.class);
+        IntentStorage.add(intent, "modifyVisitor",allVisitors.get(i));
         startActivity(intent);
 
     }

@@ -24,7 +24,7 @@
                 android:text="Identifiant : " />
 
             <EditText
-                android:id="@+id/idVisitor"
+                android:id="@+id/loginVisitor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"

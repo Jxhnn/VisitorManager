@@ -2,7 +2,6 @@ package cc.atome.visitormanager;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -24,7 +23,7 @@ public class AjoutActivity extends AppCompatActivity implements View.OnClickList
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ajout);
+        setContentView(R.layout.activity_modif);
 
         editTextId = findViewById(R.id.editTextId);
         editTextNom = findViewById(R.id.editTextNom);
@@ -35,7 +34,7 @@ public class AjoutActivity extends AppCompatActivity implements View.OnClickList
         editTextCP = findViewById(R.id.editTextCP);
         editTextVille = findViewById(R.id.editTextVille);
         editTextDate = findViewById(R.id.editTextDate);
-        buttonValiderAjout = findViewById(R.id.buttonValiderAjout);
+        buttonValiderAjout = findViewById(R.id.modifyButton);
 
         buttonValiderAjout.setOnClickListener(this);
 
